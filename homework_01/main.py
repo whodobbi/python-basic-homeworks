@@ -27,6 +27,18 @@ def is_prime(number):
     for i in range(2, int(number ** 0.5) + 1):
         if number % i == 0:
             return False
+    if number <= 1:
+        return False
+    if number <= 3:
+        return True
+    if number % 2 == 0 or number % 3 == 0:
+        return False
+    i = 5
+    while i * i <= number:
+        if number % i == 0 or number % (i + 2) == 0:
+            return False
+        i += 6
+    return True
 
 
 def filter_numbers(nums, filter_type):
@@ -50,3 +62,5 @@ numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 print(filter_numbers([1, 2, 3], "odd"))
 print(filter_numbers([2, 3, 4, 5], "even"))
 print(filter_numbers([2, 3], "prime"))
+filtered_prime_list = filter_numbers(numbers, "prime")
+print(filtered_prime_list)
