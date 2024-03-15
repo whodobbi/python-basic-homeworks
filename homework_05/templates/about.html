@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}
+About
+{% endblock  %}
+
+<p class="ms-3 mt-3">Здесь будет выполнено домашнее задание №5</p>
+{% block body %}
+  <div>
+    <h2 class="mt-2">Первое веб-приложение</h2>
+    <hr>
+    <h3>Цель:</h3>
+    <p>В этом ДЗ вы создадите первое веб-приложение.</p>
+    <ul class="list">
+      <li>скопируйте папку homework_05 для этой домашки 
+        (Памятка: <p><a 
+            class="link-opacity-10-hover" 
+            href="https://github.com/OtusTeam/BasePython/tree/homeworks"
+            >"https://github.com/OtusTeam/BasePython/tree/homeworks")</a></p></li>
+      <li>используйте следующие пакеты: Flask</li>
+      <li>в модуле app создайте базовое приложение на Flask</li>
+      <li>создайте index view /</li>
+      <li>добавьте страницу /about/, добавьте туда текст</li>
+      <li>создайте базовый шаблон (используйте https://getbootstrap.com/docs/5.0/getting-started/introduction/#starter-template)</li>
+      <li>в базовый шаблон подключите статику Bootstrap 5 (подключите стили), примените стили Bootstrap</li>
+      <li>в базовый шаблон добавьте навигационную панель nav (https://getbootstrap.com/docs/5.0/components/navbar/)</li>
+      <li>в навигационную панель добавьте ссылки на главную страницу / и на страницу /about/ при помощи url_for</li>
+      <li>добавьте новые зависимости в файл requirements.txt в корне проекта
+(лучше вручную, но можно командой pip freeze > requirements.txt, тогда обязательно проверьте, что туда попало, и удалите лишнее)</li>
+    </ul>
+    <h3>Критерии оценки:</h3>
+    <ul class="list">
+      <li>создано приложение Flask</li>
+      <li>добавлены страницы / и /about/</li>
+      <li>в базовый шаблон добавлена навигационная панель</li>
+      <li>применены стили</li>
+      <li>автоматический тест test_homework_05 проходит</li>
+    </ul>
+  </div>
+{% endblock %}

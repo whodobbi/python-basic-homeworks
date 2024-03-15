@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link 
+        rel="stylesheet" 
+        href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <title>{% block title %}
+      Home
+      {% endblock %}
+    </title>
+  </head>
+<body>
+  
+<!-- nav -->
+    <nav 
+      class="navbar navbar-expand-sm bg-body-tertiary"
+      style="background-color: #c4d2ff !important;"
+    >
+    <div class="container-fluid">
+    <a 
+        class="navbar-brand" 
+        href="#"
+    >
+    <img 
+      src="https://i.pinimg.com/564x/b2/96/15/b29615f96b91095fd489fb94c804c04d.jpg" 
+      alt="cosmo" 
+      width="50" 
+      height="50">
+    </a>
+    <button 
+        class="navbar-toggler" 
+        type="button" 
+        data-bs-toggle="collapse" 
+        data-bs-target="#navbar-collapsable" 
+        aria-controls="navbar-collapsable" 
+        aria-expanded="false" 
+        aria-label="Toggle navigation"
+
+    >
+      <span class="navbar-toggler-icon"
+      ></span>
+    </button>
+    <div 
+        class="collapse navbar-collapse" 
+        id="navbar-collapsable"
+    >
+      <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+
+        {% for endpoint, label in [
+            ('index', 'Home'),
+            ('about', 'About'),
+        ] %}
+            <li class="nav-item">
+            <a 
+                class="nav-link {{ 'active' if request.path == url_for(endpoint) }}" 
+                href="{{ url_for(endpoint) }}"
+                >{{ label }}</a>
+            </li>
+        {% endfor %}
+      </ul>
+    <a 
+    class="navbar-brand" 
+    href="https://github.com/whodobbi/python-basic-homeworks"
+    >
+    <img 
+        src="https://icons.getbootstrap.com/assets/icons/github.svg" 
+        alt="github" 
+        width="30" 
+        height="30">
+    </a>
+      <form class="d-flex">
+        <input 
+          class="form-control me-2" 
+          type="search" 
+          placeholder="Search" 
+          aria-label="Search">
+        <button 
+          class="btn btn btn-dark" 
+          type="submit">
+          Search
+        </button>
+      </form>
+    </div>
+  </div>
+</nav>
+    <!-- /nav -->
+<div class="container">
+  {% block body %}
+    <h2 class="ms-3 mt-3">Здесь будет выполнено домашнее задание №5</h2>
+  {% endblock %}
+    <script 
+        src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"
+    >
+    </script>
+  </body>
+</html>
