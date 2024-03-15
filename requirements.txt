@@ -7,7 +7,7 @@ idna==3.6
 multidict==6.0.5
 SQLAlchemy==2.0.28
 yarl==1.9.4
-black==4.2.0
+black==24.2.0
 blinker==1.7.0
 click==8.1.7
 Flask==3.0.2
