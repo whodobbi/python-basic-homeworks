@@ -15,75 +15,75 @@
 <body>
   
 <!-- nav -->
-    <nav 
-      class="navbar navbar-expand-sm bg-body-tertiary"
-    >
-    <div class="container-fluid">
+<nav
+class="navbar navbar-expand-sm bg-body-tertiary"
+>
+<div class="container-fluid">
+<a
+    class="navbar-brand"
+    href="#"
+>
+<img
+    src="https://icons.getbootstrap.com/assets/icons/house.svg"
+    alt="house"
+    width="30" height="30"
+>
+</a>
+<button
+    class="navbar-toggler"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbar-collapsable"
+    aria-controls="navbar-collapsable"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+
+>
+<span class="navbar-toggler-icon"
+></span>
+</button>
+<div
+    class="collapse navbar-collapse"
+    id="navbar-collapsable"
+>
+<ul class="navbar-nav me-auto mb-2 mb-sm-0">
+
+{% for endpoint, label in [
+    ('index', 'Home'),
+    ('about', 'About'),
+] %}
+    <li class="nav-item">
     <a
-        class="navbar-brand"
-        href="#"
-    >
-    <img
-        src="https://icons.getbootstrap.com/assets/icons/house.svg"
-        alt="house"
-        width="30" height="30"
-    >
-    </a>
-    <button 
-        class="navbar-toggler" 
-        type="button" 
-        data-bs-toggle="collapse" 
-        data-bs-target="#navbar-collapsable" 
-        aria-controls="navbar-collapsable" 
-        aria-expanded="false" 
-        aria-label="Toggle navigation"
-
-    >
-      <span class="navbar-toggler-icon"
-      ></span>
-    </button>
-    <div 
-        class="collapse navbar-collapse" 
-        id="navbar-collapsable"
-    >
-      <ul class="navbar-nav me-auto mb-2 mb-sm-0">
-
-        {% for endpoint, label in [
-            ('index', 'Home'),
-            ('about', 'About'),
-        ] %}
-            <li class="nav-item">
-            <a 
-                class="nav-link {{ 'active' if request.path == url_for(endpoint) }}" 
-                href="{{ url_for(endpoint) }}"
-                >{{ label }}</a>
-            </li>
-        {% endfor %}
-      </ul>
-    <a 
-    class="navbar-brand" 
+        class="nav-link {{ 'active' if request.path == url_for(endpoint) }}"
+        href="{{ url_for(endpoint) }}"
+        >{{ label }}</a>
+    </li>
+{% endfor %}
+</ul>
+<a
+    class="navbar-brand"
     href="https://github.com/whodobbi/python-basic-homeworks"
-    >
-    <img 
-        src="https://icons.getbootstrap.com/assets/icons/github.svg" 
-        alt="github" 
-        width="30" 
-        height="30">
-    </a>
-      <form class="d-flex">
-        <input 
-          class="form-control me-2" 
-          type="search" 
-          placeholder="Search" 
-          aria-label="Search">
-        <button 
-          class="btn btn btn-dark" 
-          type="submit">
-          Search
-        </button>
-      </form>
-    </div>
-  </div>
+>
+<img
+    src="https://icons.getbootstrap.com/assets/icons/github.svg"
+    alt="github"
+    width="30"
+    height="30">
+</a>
+<form class="d-flex">
+<input
+  class="form-control me-2"
+  type="search"
+  placeholder="Search"
+  aria-label="Search">
+<button
+  class="btn btn btn-dark"
+  type="submit">
+  Search
+</button>
+</form>
+</div>
+</div>
 </nav>
     <!-- /nav -->
 <div class="container">
